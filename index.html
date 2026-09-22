@@ -3,22 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | 占いゲーム</title>
+    <title>Unity Web Player | スマホ版ボタン連打ゲーム</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
-<div id="rotate-message" style="
-display:none;position:fixed;top:0;left:0;width:100%;height:100%;
-background:#222;color:white;z-index:9999;font-size:28px;
-font-family:sans-serif;justify-content:center;align-items:center;
-text-align:center;padding:30px;box-sizing:border-box;">
-📱<br><br>このゲームは横画面専用です。<br>
-スマートフォンを横向きにしてください。
-</div>
-
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+      <canvas id="unity-canvas" width=1080 height=1920 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -29,7 +20,7 @@ text-align:center;padding:30px;box-sizing:border-box;">
       <div id="unity-footer">
         <div id="unity-logo-title-footer"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">占いゲーム</div>
+        <div id="unity-build-title">スマホ版ボタン連打ゲーム</div>
       </div>
     </div>
     <script>
@@ -61,15 +52,15 @@ text-align:center;padding:30px;box-sizing:border-box;">
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/curtain webver1.loader.js";
+      var loaderUrl = buildUrl + "/スマホ版ボタン連打ゲーム.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/curtain webver1.data",
-        frameworkUrl: buildUrl + "/curtain webver1.framework.js",
-        codeUrl: buildUrl + "/curtain webver1.wasm",
+        dataUrl: buildUrl + "/スマホ版ボタン連打ゲーム.data.unityweb",
+        frameworkUrl: buildUrl + "/スマホ版ボタン連打ゲーム.framework.js.unityweb",
+        codeUrl: buildUrl + "/スマホ版ボタン連打ゲーム.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "占いゲーム",
+        productName: "スマホ版ボタン連打ゲーム",
         productVersion: "1.0",
         showBanner: unityShowBanner,
         // errorHandler: function(err, url, line) {
@@ -113,8 +104,8 @@ text-align:center;padding:30px;box-sizing:border-box;">
 
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        canvas.style.width = "1080px";
+        canvas.style.height = "1920px";
       }
 
       document.querySelector("#unity-loading-bar").style.display = "block";
@@ -136,26 +127,6 @@ text-align:center;padding:30px;box-sizing:border-box;">
             };
 
       document.body.appendChild(script);
-
-      function checkOrientation()
-      {
-        const isMobile=/iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        if(!isMobile) return;
-        const rotateMessage=document.getElementById("rotate-message");
-        const unityContainer=document.getElementById("unity-container");
-        if(window.innerHeight>window.innerWidth){
-          rotateMessage.style.display="flex";
-          unityContainer.style.display="none";
-        }else{
-          rotateMessage.style.display="none";
-          unityContainer.style.display="block";
-        }
-      }
-
-      window.addEventListener("resize",checkOrientation);
-      window.addEventListener("orientationchange",checkOrientation);
-      checkOrientation();
-
 
     </script>
   </body>
