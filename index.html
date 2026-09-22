@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | スマホ版ボタン連打ゲーム</title>
+    <title>Unity Web Player | 占いゲーム</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=1080 height=1920 tabindex="-1"></canvas>
+      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -20,7 +20,7 @@
       <div id="unity-footer">
         <div id="unity-logo-title-footer"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">スマホ版ボタン連打ゲーム</div>
+        <div id="unity-build-title">占いゲーム</div>
       </div>
     </div>
     <script>
@@ -52,15 +52,15 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/スマホ版ボタン連打ゲーム.loader.js";
+      var loaderUrl = buildUrl + "/占いゲーム素材.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/スマホ版ボタン連打ゲーム.data.unityweb",
-        frameworkUrl: buildUrl + "/スマホ版ボタン連打ゲーム.framework.js.unityweb",
-        codeUrl: buildUrl + "/スマホ版ボタン連打ゲーム.wasm.unityweb",
+        dataUrl: buildUrl + "/占いゲーム素材.data.br",
+        frameworkUrl: buildUrl + "/占いゲーム素材.framework.js.br",
+        codeUrl: buildUrl + "/占いゲーム素材.wasm.br",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "スマホ版ボタン連打ゲーム",
+        productName: "占いゲーム",
         productVersion: "1.0",
         showBanner: unityShowBanner,
         // errorHandler: function(err, url, line) {
@@ -104,8 +104,8 @@
 
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "1080px";
-        canvas.style.height = "1920px";
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
       }
 
       document.querySelector("#unity-loading-bar").style.display = "block";
